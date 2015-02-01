@@ -1,8 +1,8 @@
+/*在css中也可用同样的标签调用组件*/
 <!--load('base@0.0.1')-->
-.menu{
-    background: url(./navbg.jpg);
+.bg{
+	height: 1200px;
+	background: url(./bg.jpg) no-repeat center top;
 }
-.menu-btn{}
-.menu-btn1{}
-.menu-btn2{}
-.menu-btn3{}
+.container{}
+.header{}

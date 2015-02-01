@@ -1,4 +1,8 @@
 .menu{
-    background: url('./navbg.png');
+	width: 846px;
+	height: 348px;
+	margin: 0 auto;
+    background: url('./nav.png') no-repeat center top ;
 }
+/*可以使用fis自带的语法加载组件内的内部依赖，编译后会把menuBtns.css的代码合并到下面*/
 @import url(menuBtns.css?__inline);
