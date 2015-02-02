@@ -13,13 +13,14 @@
 </head>
 
 <body>
-<!-- 调用本地自定义模块，不需要加版本号 -->
-<!--load('menu')-->
+<!-- 调用spm安装模块，需要加版本号 -->
+<!--load('wn-alice-nav@0.0.1')-->
+
 <div class="bg">
     <div class="container">
         <div class="header">
-            <!-- 调用spm安装模块，需要加版本号 -->
-            <!--load('alice-nav@1.1.0')-->
+         <!-- 调用本地自定义模块，不需要加版本号 -->
+         <!--load('menu')-->
         </div>
     </div>
 </div>
