@@ -502,6 +502,7 @@ var bulidSnailfwd = function(ret, conf, settings, opt){
         }
     }
     //console.log(stringObj(map));
+    //console.log(fis.config);
     /*
     * 6.根据pkgMap找到每个模板对应的资源包，然后把所有引用样式写到/static/pkg/模板名_ components.css下，
     * 此处应留一个插件接口，可以对打包的组件css进行一些个性化处理和并校正样式里的相对路径资源引用为绝对路径，相对于tpl结构。
@@ -509,9 +510,15 @@ var bulidSnailfwd = function(ret, conf, settings, opt){
     * 的样式引用，替换__COMPONENTS_JS__为“/static/pkg/模板名_ components.js”的脚本引用，通过页面里带有data-main的脚本标签去
     * 寻找__COMPONENTS_INIT__标签，然后将其替换为所有模块的初始化代码，寻找__COMPONENTS_ALIAS__标签，然后将其替换为所有模块的别名对象。
     * */
-    var domain;
+    var domain,root;
     if(opt.domain&&fis.config.get('roadmap').domain){
         domain=fis.config.get('roadmap').domain;
+    }
+    if(opt.dest=='preview'){
+        root = fis.project.getTempPath('www');
+        //console.log(root);
+    }else{
+        root=opt.dest;
     }
     for(var templateName in map.templateDeps){
         var template=map.templateDeps[templateName],
@@ -523,13 +530,8 @@ var bulidSnailfwd = function(ret, conf, settings, opt){
         template.pkg.css.path=domain||''+fis.config.get('release')+'static/pkg/'+templateFileName+'_components.css';
         template.pkg.js.path=domain||''+fis.config.get('release')+'static/pkg/'+templateFileName+'_components.js';
         //写入打包文件到设置地址
-        if(domain &&typeof domain =='string'){
-            fis.util.write(opt.dest+fis.config.get('release')+'static/pkg/'+templateFileName+'_components.css', getFilesContents(template.css,[translateCssRelativePathToAbsolute]));
-            fis.util.write(opt.dest+fis.config.get('release')+'static/pkg/'+templateFileName+'_components.js', getFilesContents(template.js));
-        }else{
-            fis.util.write(opt.dest+fis.config.get('release')+'static/pkg/'+templateFileName+'_components.css', getFilesContents(template.css,[translateCssRelativePathToAbsolute]));
-            fis.util.write(opt.dest+fis.config.get('release')+'static/pkg/'+templateFileName+'_components.js', getFilesContents(template.js));
-        }
+        fis.util.write(root+fis.config.get('release')+'static/pkg/'+templateFileName+'_components.css', getFilesContents(template.css,[translateCssRelativePathToAbsolute]));
+        fis.util.write(root+fis.config.get('release')+'static/pkg/'+templateFileName+'_components.js', getFilesContents(template.js));
 
 
         //替换模板里的组件标签为对应的html结构
@@ -800,13 +802,13 @@ var bulidSnailfwd = function(ret, conf, settings, opt){
 
     //获取依赖数组，根据文件类型分成css和js，然后根据引用模板名进行分别打包，把css包插入到__COMPONENT_CSS__，把js包插入到__COMPONENT_JS__
 
-    var retStr = stringObj(ret);
-    var confStr = stringObj(conf);
-    var settingsStr = stringObj(settings);
+//    var retStr = stringObj(ret);
+//    var confStr = stringObj(conf);
+//    var settingsStr = stringObj(settings);
 
-    fis.util.write(fis.project.getProjectPath()+'/test/retStr.txt', retStr);
-    fis.util.write(fis.project.getProjectPath()+'/test/confStr.txt', confStr);
-    fis.util.write(fis.project.getProjectPath()+'/test/settingsStr.txt', settingsStr);
+//    fis.util.write(fis.project.getProjectPath()+'/test/retStr.txt', retStr);
+//    fis.util.write(fis.project.getProjectPath()+'/test/confStr.txt', confStr);
+//    fis.util.write(fis.project.getProjectPath()+'/test/settingsStr.txt', settingsStr);
 //    fs.writeFile('D:/senro/senro/git/company/snailfwd-site/test/optStr.txt', optStr, function (err) {
 //        console.log('optStr导出成功！');
 //    });
