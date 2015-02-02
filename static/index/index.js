@@ -4,7 +4,7 @@ require.config({
 	  __COMPONENTS_ALIAS__ 
 });
 
-/*__COMPONENTS_INIT__根据情况也可不写*/
+/*组件初始化标签根据情况也可不写*/
 __COMPONENTS_INIT__
 
 /*自定义的js，遵循commonjs规范，即像写nodejs一样即可*/
