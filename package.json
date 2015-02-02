@@ -1,0 +1,27 @@
+{
+  "name": "snailfwd-site-special",
+  "version": "0.0.1",
+  "description": "snailfwd special site template",
+  "keywords": [
+    "snailfwd",
+    "snailfwd-site",
+    "snailfwd-site-special"
+  ],
+  "author": "senro <passtom@foxmail.com>",
+  "homepage": "https://github.com/senro/snailfwd-site-special",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/senro/snailfwd-site-special.git"
+  },
+  "bugs": {
+    "url": "https://github.com/senro/snailfwd-site-special/issues"
+  },
+  "license": "MIT",
+  "spm": {
+    "dependencies": {
+      "jquery": "1.8.3",
+      "wn-alice-nav": "0.0.2"
+    },
+    "ignore": ["dist"]
+  }
+}
