@@ -14,7 +14,7 @@
 
 <body>
 <!-- 调用spm安装模块，需要加版本号 -->
-<!--load('wn-alice-nav@0.0.1')-->
+<!--load('wn-alice-nav@0.0.2')-->
 
 <div class="bg">
     <div class="container">
