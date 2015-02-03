@@ -5,6 +5,7 @@
     <title> <%title%> </title>
     <meta name="description" content="<%description%>"/>
     <meta name="keywords" content="<%keywords%>"/>
+    <meta name="gameId" content="<%gameId%>"/>
     <meta name="copyright" content="苏州蜗牛数字科技股份有限公司"/>
     <meta name="author" content="xxx"/>
     <link rel="stylesheet" type="text/css" href="http://static.woniu.com/stylesheets/base.css"/>
