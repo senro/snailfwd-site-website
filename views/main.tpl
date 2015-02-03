@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title> <%title%> </title>
+    <title><%title%></title>
     <meta name="description" content="<%description%>"/>
     <meta name="keywords" content="<%keywords%>"/>
     <meta name="gameId" content="<%gameId%>"/>
