@@ -14,6 +14,8 @@
 </head>
 
 <body>
+<script charset="utf-8" id="pub-header" register="http://www.woniu.com/account/register/?mobile=on&gameid=<%gameId%>&pagename=&goto=" src="http://static.woniu.com/header_tl/pub-header.js"></script>
+
 <!-- 调用spm安装模块，需要加版本号 -->
 <!--load('wn-alice-nav@0.0.2')-->
 
@@ -25,6 +27,10 @@
         </div>
     </div>
 </div>
+
+<script id="pub-footer" gamename="<%gameName%>" src="http://static.woniu.com/footer_dl/pub-footer.js"></script>
+<script type="text/javascript" src="http://static.woniu.com/script/module/statistics/0.1/statistics.js"></script>
+
 <script type="text/javascript" src="../static/lib/snailfwd.js"></script>
 __COMPONENTS_JS__
 <script type="text/javascript" data-main='true' src="../static/index/index.js" ></script>
